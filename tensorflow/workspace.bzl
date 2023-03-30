@@ -509,14 +509,16 @@ def tf_repositories(path_prefix = "", tf_repo_name = ""):
     )
 
     # WARNING: make sure ncteisen@ and vpai@ are cc-ed on any CL to change the below rule
+    _GRPC_COMMIT = "1ca7c249d1b121560fffd921e55ebe91a780540d"
+    _GRPC_SHA256 = "79ee49fe23862c17a854d9558d13c48f38a0031166f9ecb08cc29936776da637"
     tf_http_archive(
         name = "grpc",
-        sha256 = "2fcb7f1ab160d6fd3aaade64520be3e5446fc4c6fa7ba6581afdc4e26094bd81",
-        strip_prefix = "grpc-1.26.0",
+        sha256 = _GRPC_SHA256,
+        strip_prefix = "grpc-%s" % _GRPC_COMMIT,
         system_build_file = clean_dep("//third_party/systemlibs:grpc.BUILD"),
         urls = [
 #            "https://storage.googleapis.com/mirror.tensorflow.org/github.com/grpc/grpc/archive/refs/tags/v1.26.0.tar.gz",
-            "https://github.com/grpc/grpc/archive/refs/tags/v1.26.0.tar.gz",
+            "https://github.com/peachest/grpc/archive/%s.tar.gz" % _GRPC_COMMIT,
         ],
     )
 
