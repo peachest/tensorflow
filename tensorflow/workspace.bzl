@@ -515,7 +515,7 @@ def tf_repositories(path_prefix = "", tf_repo_name = ""):
         strip_prefix = "grpc-1.26.0",
         system_build_file = clean_dep("//third_party/systemlibs:grpc.BUILD"),
         urls = [
-            "https://storage.googleapis.com/mirror.tensorflow.org/github.com/grpc/grpc/archive/refs/tags/v1.26.0.tar.gz",
+#            "https://storage.googleapis.com/mirror.tensorflow.org/github.com/grpc/grpc/archive/refs/tags/v1.26.0.tar.gz",
             "https://github.com/grpc/grpc/archive/refs/tags/v1.26.0.tar.gz",
         ],
     )
